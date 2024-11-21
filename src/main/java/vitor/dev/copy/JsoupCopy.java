@@ -28,9 +28,10 @@ public class JsoupCopy {
 
             // Cria o arquivo na pasta /out
             File outputFile = new File("./out/" + outputFileName);
-            try (FileWriter writer = new FileWriter(outputFile)) {
-                writer.write(doc.html()); // Salva o conteúdo HTML no arquivo.
-            }
+            FileWriter writer = new FileWriter(outputFile);
+
+            writer.write(doc.html()); // Salva o conteúdo HTML no arquivo.
+            writer.close();
         } catch (IOException e) {
             e.printStackTrace(); // Pilha de execução.
         }
